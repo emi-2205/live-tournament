@@ -1,0 +1,86 @@
+.navbar {
+    /* position: fixed; */
+    /* top: 0;
+    left: 0;
+    right: 0; */
+    height: 4em;
+    /* background-color: #0d121c; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
+
+.navbar-anchor {
+    display: inline;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.footer {
+    position: inherit;
+    bottom: 0;
+    width: 100%;
+}
+
+
+  
+
+
+
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    gap: auto;
+}
+
+.teams {
+    grid-area: 1 / 1 / 2 / span 1;
+    justify-self: start;
+}
+
+.goals {
+    grid-area: 1 / 2 / 2 / span 1;
+    justify-self: start;
+}
+
+.live {
+    grid-area: 1 / 3 / 2 / span 1;
+    justify-self: start;
+}
+
+.arrow {
+    grid-area: 1 / 5 / 5 / span 5;
+    justify-self: start;
+} */
+
+
+/* .grid-container-outer {
+    display: grid;
+    grid-template-rows: 100px 100px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    grid-template-areas:
+    "teams goals . live arrow"
+    "teams goals . live arrow";
+}
+
+.teams {
+    text-align: center;
+    grid-area: teams;
+}
+
+.goals {
+    text-align: center;
+    grid-area: goals;
+}
+
+.live {
+    text-align: center;
+    grid-area: live;
+}
+
+.arrow {
+    text-align: center;
+    grid-area: arrow;
+} */
