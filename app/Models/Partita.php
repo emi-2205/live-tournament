@@ -11,14 +11,14 @@ class Partita extends Model
 
     protected $table = 'partita';
 
-    // protected $fillable = [
-    //     'red_team_ID',
-    //     'blue_team_ID',
-    //     'red_goals',
-    //     'blue_goals',
-    //     'live',
-    //     'finished',
-    //     'date',
-    // ];
+    protected $fillable = [
+        'red_team_ID',
+        'blue_team_ID',
+        'red_goals',
+        'blue_goals',
+        'live',
+        'finished',
+        'date',
+    ];
     
 }

@@ -93,4 +93,22 @@ class PublicController extends Controller
         return view('home')
             ->with('partite', $partite);
     }
+
+    public function insert()
+    {
+        // risponde alla rota GET che presenta la home del sistema
+        //tira su i 5 alloggi, pubblicati= true, da mettere nel carosello in home
+        $partita = new Partita;
+
+        $partita->partita_ID=1;
+        $partita->red_team_ID="Team1";
+        $partita->red_team_ID="Team2";
+        $partita->red_goals=null;
+        $partita->blue_goals=null;
+        $partita->live=0;
+        $partita->finished=0;
+        $partita->date="";
+        // return view('home')
+        //     ->with('partite', $partite);
+    }
 }
