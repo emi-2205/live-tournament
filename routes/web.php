@@ -14,8 +14,8 @@ use App\Http\Controllers\PublicController;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\PublicController::class, 'showHome'])->name('home');
-Route::get('/day1', [\App\Http\Controllers\PublicController::class, 'showDay1'])->name('day1');
+// Route::get('/', [\App\Http\Controllers\PublicController::class, 'showHome'])->name('home');
+Route::get('/', [\App\Http\Controllers\PublicController::class, 'showDay1'])->name('day1');
 Route::get('/day2', [\App\Http\Controllers\PublicController::class, 'showDay2'])->name('day2');
 Route::get('/day3', [\App\Http\Controllers\PublicController::class, 'showDay3'])->name('day3');
 Route::get('/day4', [\App\Http\Controllers\PublicController::class, 'showDay4'])->name('day4');
