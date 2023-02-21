@@ -797,7 +797,7 @@ video {
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
     .sm\:fixed {
         position: fixed
     }
@@ -888,8 +888,8 @@ video {
 
     .navbar-anchor {
         display: inline;
-        margin-left: 1em;
-        margin-right: 1em;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
     }
 }
 
@@ -897,42 +897,11 @@ video {
     .md\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
-
-
-
-    /* .main-grid-container {
-        display: grid;
-        grid-template-rows: 100px 800px 100px;
-        grid-template-columns: 1fr 50fr 1fr;
-        grid-gap: 5px;
-        grid-template-areas:
-            "navbar navbar navbar",
-            " . content . ",
-            "footer footer footer"
+    .navbar-anchor {
+        display: inline;
+        margin-left: 20px !important;
+        margin-right: 20px !important;
     }
-
-    .navbar {
-        text-align: center;
-        grid-area: navbar;
-    }
-
-    .content {
-        text-align: center;
-        grid-area: content;
-    }
-
-    .footer {
-        text-align: center;
-        grid-area: footer;
-    } */
-
-
-
-    /* .footer {
-        position: inherit;
-        bottom: 0;
-        width: 100%;
-    } */
 }
 
 @media (min-width: 1024px) {
