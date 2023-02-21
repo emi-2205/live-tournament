@@ -797,7 +797,7 @@ video {
     }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 600px) {
     .sm\:fixed {
         position: fixed
     }
@@ -846,64 +846,50 @@ video {
         text-align: right
     }
 
-    .col-sm-1 {
-        flex: 0 0 auto;
-        width: 8.33333333%
+    .grid-container-outer {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 5px;
+        grid-template-areas:
+            "teams . goals . live arrow"
     }
 
-    .col-sm-2 {
-        flex: 0 0 auto;
-        width: 16.66666667%
+    .teams {
+        text-align: center;
+        grid-area: teams;
     }
 
-    .col-sm-3 {
-        flex: 0 0 auto;
-        width: 25%
+    .goals {
+        text-align: center;
+        grid-area: goals;
     }
 
-    .col-sm-4 {
-        flex: 0 0 auto;
-        width: 33.33333333%
+    .live {
+        text-align: center;
+        grid-area: live;
     }
 
-    .col-sm-5 {
-        flex: 0 0 auto;
-        width: 41.66666667%
+    .arrow {
+        text-align: center;
+        grid-area: arrow;
     }
 
-    .col-sm-6 {
-        flex: 0 0 auto;
-        width: 50%
+    .navbar {
+        /* position: fixed; */
+        /* top: 0;
+        left: 0;
+        right: 0; */
+        height: 4em;
+        /* background-color: #0d121c; */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
     }
 
-    .col-sm-7 {
-        flex: 0 0 auto;
-        width: 58.33333333%
-    }
-
-    .col-sm-8 {
-        flex: 0 0 auto;
-        width: 66.66666667%
-    }
-
-    .col-sm-9 {
-        flex: 0 0 auto;
-        width: 75%
-    }
-
-    .col-sm-10 {
-        flex: 0 0 auto;
-        width: 83.33333333%
-    }
-
-    .col-sm-11 {
-        flex: 0 0 auto;
-        width: 91.66666667%
-    }
-
-    .col-sm-12 {
-        flex: 0 0 auto;
-        width: 100%
+    .navbar-anchor {
+        display: inline;
+        margin-left: 1em;
+        margin-right: 1em;
     }
 }
 
@@ -911,9 +897,46 @@ video {
     .md\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
+
+
+
+    /* .main-grid-container {
+        display: grid;
+        grid-template-rows: 100px 800px 100px;
+        grid-template-columns: 1fr 50fr 1fr;
+        grid-gap: 5px;
+        grid-template-areas:
+            "navbar navbar navbar",
+            " . content . ",
+            "footer footer footer"
+    }
+
+    .navbar {
+        text-align: center;
+        grid-area: navbar;
+    }
+
+    .content {
+        text-align: center;
+        grid-area: content;
+    }
+
+    .footer {
+        text-align: center;
+        grid-area: footer;
+    } */
+
+
+
+    /* .footer {
+        position: inherit;
+        bottom: 0;
+        width: 100%;
+    } */
 }
 
 @media (min-width: 1024px) {
+
     .lg\:gap-8 {
         gap: 2rem
     }
