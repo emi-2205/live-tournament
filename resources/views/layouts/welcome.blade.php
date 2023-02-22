@@ -12,7 +12,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/tailwindcss.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-    
+
 
 </head>
 
@@ -25,6 +25,10 @@
 
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8 mt-16">
+
+            {{-- Live match in evidence --}}
+            @yield('live')
+            
 
             {{-- BODY --}}
             @yield('body')

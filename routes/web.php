@@ -14,11 +14,11 @@ use App\Http\Controllers\PublicController;
 |
 */
 
-// Route::get('/', [\App\Http\Controllers\PublicController::class, 'showHome'])->name('home');
-Route::get('/', [\App\Http\Controllers\PublicController::class, 'showDay1'])->name('day1');
-Route::get('/day2', [\App\Http\Controllers\PublicController::class, 'showDay2'])->name('day2');
-Route::get('/day3', [\App\Http\Controllers\PublicController::class, 'showDay3'])->name('day3');
-Route::get('/day4', [\App\Http\Controllers\PublicController::class, 'showDay4'])->name('day4');
+Route::get('/', [\App\Http\Controllers\PublicController::class, 'showHome'])->name('home');
+Route::get('/{day}', [\App\Http\Controllers\PublicController::class, 'showByDay'])->name('showByDay');
+// Route::get('/day2', [\App\Http\Controllers\PublicController::class, 'showDay2'])->name('day2');
+// Route::get('/day3', [\App\Http\Controllers\PublicController::class, 'showDay3'])->name('day3');
+// Route::get('/day4', [\App\Http\Controllers\PublicController::class, 'showDay4'])->name('day4');
 
 Route::get('login', function () {
     return view('home');
