@@ -114,30 +114,79 @@ class PublicController extends Controller
         //     ->with('partite', $partite);
     }
 
-    public function increment($id, $team)
+    public function increment($teamBin, $token)
     {
-        $partita = $this->getPartitaById($id);
-        if ($team == 'red' && $partita->red_goals < 9 && !(is_null($partita->red_goals))) {
-            $partita->red_goals = ($partita->red_goals) + 1;
-        } elseif ($team == 'blue' && $partita->blue_goals < 9 && !(is_null($partita->blue_goals))) {
-            $partita->blue_goals = ($partita->blue_goals) + 1;
+        $matchToken='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+
+        if($token==$matchToken){
+            $team= null;
+            if($teamBin=="0"){
+                $team= 'red';
+            }
+            elseif($teamBin=="1"){
+                $team= 'blue';
+            }
+            else{
+                return "team error!";
+            }
+            
+            $partita = $this->_partitaModel->where('live', '1')->first();
+            if(!is_null($partita)){
+                if ($team == 'red' && $partita->red_goals < 9 && !(is_null($partita->red_goals))) {
+                    $partita->red_goals = ($partita->red_goals) + 1;
+                } elseif ($team == 'blue' && $partita->blue_goals < 9 && !(is_null($partita->blue_goals))) {
+                    $partita->blue_goals = ($partita->blue_goals) + 1;
+                }
+    
+                $partita->save();
+                return "ok increment";
+            }
+            else{
+                return "partita not found!";
+            }
         }
-        $partita->save();
-        $partita = $this->getPartita($id);
-        return "ok increment";
+        else{
+            return 'access denied!';
+        }
+        
+        
     }
 
-    public function decrement($id, $team)
+    public function decrement($teamBin, $token)
     {
-        $partita = $this->getPartitaById($id);
-        if ($team == 'red' && $partita->red_goals > 0 && !(is_null($partita->red_goals))) {
-            $partita->red_goals = ($partita->red_goals) - 1;
-        } elseif ($team == 'blue' && $partita->blue_goals > 0 && !(is_null($partita->blue_goals))) {
-            $partita->blue_goals = ($partita->blue_goals) - 1;
-        }
-        $partita->save();
-        $partita = $this->getPartita($id);
 
-        return "ok decrement";
+        $matchToken='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+
+        if($token==$matchToken){
+            $team= null;
+            if($teamBin=="0"){
+                $team= 'red';
+            }
+            elseif($teamBin=="1"){
+                $team= 'blue';
+            }
+            else{
+                return "team error!";
+            }
+            
+            $partita = $this->_partitaModel->where('live', '1')->first();
+            if(!is_null($partita)){
+                if ($team == 'red' && $partita->red_goals > 0 && !(is_null($partita->red_goals))) {
+                    $partita->red_goals = ($partita->red_goals) - 1;
+                } elseif ($team == 'blue' && $partita->blue_goals > 0 && !(is_null($partita->blue_goals))) {
+                    $partita->blue_goals = ($partita->blue_goals) - 1;
+                }
+                $partita->save();
+    
+                return "ok decrement";
+            }
+            else{
+                return "partita not found!";
+            }
+        }
+        else{
+            return 'access denied!';
+        }
     }
+        
 }

@@ -40,6 +40,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-
-Route::get('/increment/{id}/{team}', [\App\Http\Controllers\PublicController::class, 'increment'])->name('increment');
-Route::get('/decrement/{id}/{team}', [\App\Http\Controllers\PublicController::class, 'decrement'])->name('decrement');
+// esp32 Routes
+Route::get('/increment/{team}/{token}', [\App\Http\Controllers\PublicController::class, 'increment'])->name('increment');
+Route::get('/decrement/{team}/{token}', [\App\Http\Controllers\PublicController::class, 'decrement'])->name('decrement');

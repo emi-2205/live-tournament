@@ -24,6 +24,7 @@ class AdminController extends Controller
     public function incrementGoals($id, $team)
     {
         $partita = $this->_publicController->getPartitaById($id);
+        // dd($partita);
         if ($team == 'red' && $partita->red_goals < 9 && !(is_null($partita->red_goals))) {
             $partita->red_goals = ($partita->red_goals) + 1;
         } elseif ($team == 'blue' && $partita->blue_goals < 9 && !(is_null($partita->blue_goals))) {
