@@ -30,7 +30,7 @@ class PublicController extends Controller
 
     public function showHome()
     {
-        $day=1;
+        $day = 1;
         // risponde alla rota GET che presenta la home del sistema
         //tira su i 5 alloggi, pubblicati= true, da mettere nel carosello in home
         if ($day == 1) {
@@ -76,59 +76,24 @@ class PublicController extends Controller
             ]);
     }
 
-    public function showDay1()
+    public function getPartitaById($id)
     {
-        // risponde alla rota GET che presenta la home del sistema
-        //tira su i 5 alloggi, pubblicati= true, da mettere nel carosello in home
-        $partite = $this->_partitaModel->where('date', ['2022-03-06'])->get();
-        $partite = $partite->all();
-        if ($partite != null)
-            $partite = $this->sanitize($partite);
-
-        return view('home')
-            ->with([
-                'partite' => $partite,
-                'day' => '1'
-            ]);
+        $partita = Partita::findOrFail($id);
+        return $partita;
     }
 
-    public function showDay2()
+    public function getPartita($id)
     {
-        // risponde alla rota GET che presenta la home del sistema
-        //tira su i 5 alloggi, pubblicati= true, da mettere nel carosello in home
-        $partite = $this->_partitaModel->where('date', ['2022-03-07'])->get();
-        $partite = $partite->all();
-        if ($partite != null)
-            $partite = $this->sanitize($partite);
-
-        return view('home')
-            ->with('partite', $partite);
+        $partita = $this->getPartitaById($id);
+        return ['partita' => $partita];
     }
 
-    public function showDay3()
+    public function showPartita($id)
     {
-        // risponde alla rota GET che presenta la home del sistema
-        //tira su i 5 alloggi, pubblicati= true, da mettere nel carosello in home
-        $partite = $this->_partitaModel->where('date', ['2022-03-08'])->get();
-        $partite = $partite->all();
-        if ($partite != null)
-            $partite = $this->sanitize($partite);
+        $partita = $this->getPartita($id);
 
-        return view('home')
-            ->with('partite', $partite);
-    }
-
-    public function showDay4()
-    {
-        // risponde alla rota GET che presenta la home del sistema
-        //tira su i 5 alloggi, pubblicati= true, da mettere nel carosello in home
-        $partite = $this->_partitaModel->where('date', ['2022-03-09'])->get();
-        $partite = $partite->all();
-        if ($partite != null)
-            $partite = $this->sanitize($partite);
-
-        return view('home')
-            ->with('partite', $partite);
+        return view('match-detail')
+            ->with($partita);
     }
 
     public function insert()
@@ -147,5 +112,32 @@ class PublicController extends Controller
         $partita->date = "";
         // return view('home')
         //     ->with('partite', $partite);
+    }
+
+    public function increment($id, $team)
+    {
+        $partita = $this->getPartitaById($id);
+        if ($team == 'red' && $partita->red_goals < 9 && !(is_null($partita->red_goals))) {
+            $partita->red_goals = ($partita->red_goals) + 1;
+        } elseif ($team == 'blue' && $partita->blue_goals < 9 && !(is_null($partita->blue_goals))) {
+            $partita->blue_goals = ($partita->blue_goals) + 1;
+        }
+        $partita->save();
+        $partita = $this->getPartita($id);
+        return "ok increment";
+    }
+
+    public function decrement($id, $team)
+    {
+        $partita = $this->getPartitaById($id);
+        if ($team == 'red' && $partita->red_goals > 0 && !(is_null($partita->red_goals))) {
+            $partita->red_goals = ($partita->red_goals) - 1;
+        } elseif ($team == 'blue' && $partita->blue_goals > 0 && !(is_null($partita->blue_goals))) {
+            $partita->blue_goals = ($partita->blue_goals) - 1;
+        }
+        $partita->save();
+        $partita = $this->getPartita($id);
+
+        return "ok decrement";
     }
 }

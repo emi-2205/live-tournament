@@ -12,8 +12,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/tailwindcss.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="antialiased">
