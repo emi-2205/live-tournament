@@ -15,12 +15,31 @@ use App\Http\Controllers\PublicController;
 */
 
 Route::get('/', [\App\Http\Controllers\PublicController::class, 'showHome'])->name('home');
-Route::get('/{day}', [\App\Http\Controllers\PublicController::class, 'showByDay'])->name('showByDay');
-// Route::get('/day2', [\App\Http\Controllers\PublicController::class, 'showDay2'])->name('day2');
-// Route::get('/day3', [\App\Http\Controllers\PublicController::class, 'showDay3'])->name('day3');
-// Route::get('/day4', [\App\Http\Controllers\PublicController::class, 'showDay4'])->name('day4');
+Route::get('/day/{day}', [\App\Http\Controllers\PublicController::class, 'showByDay'])->name('showByDay');
+Route::get('/partita/{id}', [\App\Http\Controllers\PublicController::class, 'showPartita'])->name('showPartita');
+Route::get('/getPartita/{id}', [\App\Http\Controllers\PublicController::class, 'getPartita'])->name('getPartita');
+Route::get('/incrementGoals/{id}/{team}', [\App\Http\Controllers\AdminController::class, 'incrementGoals'])->name('incrementGoals');
+Route::get('/decrementGoals/{id}/{team}', [\App\Http\Controllers\AdminController::class, 'decrementGoals'])->name('decrementGoals');
+Route::get('/startPartita/{id}', [\App\Http\Controllers\AdminController::class, 'startPartita'])->name('startPartita');
+Route::get('/closePartita/{id}', [\App\Http\Controllers\AdminController::class, 'closePartita'])->name('closePartita');
+Route::get('/restartPartita/{id}', [\App\Http\Controllers\AdminController::class, 'restartPartita'])->name('restartPartita');
 
-Route::get('login', function () {
-    return view('home');
+
+// Route::get('login', function () {
+//     return view('home');
+// })->name('login');
+
+
+//Auth::routes();
+
+Route::get('/login', function () {
+    return view('auth.login');
 })->name('login');
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+Route::get('/increment/{id}/{team}', [\App\Http\Controllers\PublicController::class, 'increment'])->name('increment');
+Route::get('/decrement/{id}/{team}', [\App\Http\Controllers\PublicController::class, 'decrement'])->name('decrement');
