@@ -133,9 +133,19 @@ class PublicController extends Controller
             $partita = $this->_partitaModel->where('live', '1')->first();
             if(!is_null($partita)){
                 if ($team == 'red' && $partita->red_goals < 9 && !(is_null($partita->red_goals))) {
-                    $partita->red_goals = ($partita->red_goals) + 1;
+                    if($partita->red_goals==8 && $partita->blue_goals==8){
+                        $partita->blue_goals = ($partita->blue_goals) - 1;
+                    }
+                    else{
+                        $partita->red_goals = ($partita->red_goals) + 1;
+                    }
                 } elseif ($team == 'blue' && $partita->blue_goals < 9 && !(is_null($partita->blue_goals))) {
-                    $partita->blue_goals = ($partita->blue_goals) + 1;
+                    if($partita->red_goals==8 && $partita->blue_goals==8){
+                        $partita->red_goals = ($partita->red_goals) - 1;
+                    }
+                    else{
+                        $partita->blue_goals = ($partita->blue_goals) + 1;
+                    }
                 }
     
                 $partita->save();
