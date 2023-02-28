@@ -32,12 +32,9 @@ Route::get('/restartPartita/{id}', [\App\Http\Controllers\AdminController::class
 
 //Auth::routes();
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/login', function () {return view('auth.login');})->name('login');
+Route::post('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+Route::post('/authentication', [\App\Http\Controllers\Auth\LoginController::class, 'authentication'])->name('authentication');
 
 
 // esp32 Routes

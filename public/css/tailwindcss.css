@@ -880,6 +880,78 @@ video {
         grid-area: arrow;
     }
 
+    .grid-container-match-detail {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 1px;
+        grid-template-areas:
+            "red-team red-team goals-zone goals-zone goals-zone blue-team blue-team"
+            "red-team-ID red-team-ID . . . blue-team-ID blue-team-ID"
+            "red-buttons red-buttons restart-button live-button finish-button blue-buttons blue-buttons"
+    }
+
+    .red-buttons {
+        text-align: center;
+        grid-area: red-buttons;
+    }
+
+    .red-team {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        grid-area: red-team;
+    }
+
+    .red-team-ID {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        grid-area: red-team-ID;
+    }
+
+    .goals-zone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-area: goals-zone;
+    }
+
+    .blue-buttons {
+        text-align: center;
+        grid-area: blue-buttons;
+    }
+
+    .blue-team {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        grid-area: blue-team;
+    }
+
+    .blue-team-ID {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        grid-area: blue-team-ID;
+    }
+
+    .live-button {
+        text-align: center;
+        grid-area: live-button;
+    }
+
+    .finish-button {
+        text-align: center;
+        grid-area: finish-button;
+    }
+
+    .restart-button {
+        text-align: center;
+        grid-area: restart-button;
+    }
+
     .navbar {
         /* position: fixed; */
         /* top: 0;
@@ -897,7 +969,7 @@ video {
         margin-right: 5px !important;
     }
 
-    .content-container{
+    .content-container {
         width: 100%;
     }
 }
@@ -906,13 +978,14 @@ video {
     .md\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
+
     .navbar-anchor {
         display: inline;
         margin-left: 20px !important;
         margin-right: 20px !important;
     }
 
-    .content-container{
+    .content-container {
         width: 85%;
     }
 }
@@ -987,7 +1060,7 @@ video {
         width: 100%
     }
 
-    .content-container{
+    .content-container {
         width: 75%;
     }
 }
