@@ -16,7 +16,7 @@ class PartitaTableSeeder extends Seeder
     {
         DB::table('partita')->insert([
             [
-                'partita_ID' => '1',
+                'id' => '1',
                 'red_team_ID' => 'Team1',
                 'blue_team_ID' => 'Team2',
                 'red_goals' => null,
@@ -26,7 +26,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-06',
             ],
             [
-                'partita_ID' => '2',
+                'id' => '2',
                 'red_team_ID' => 'Team3',
                 'blue_team_ID' => 'Team4',
                 'red_goals' => null,
@@ -36,7 +36,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-06',
             ],
             [
-                'partita_ID' => '3',
+                'id' => '3',
                 'red_team_ID' => 'Team5',
                 'blue_team_ID' => 'Team6',
                 'red_goals' => null,
@@ -46,7 +46,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-06',
             ],
             [
-                'partita_ID' => '4',
+                'id' => '4',
                 'red_team_ID' => 'Team7',
                 'blue_team_ID' => 'Team8',
                 'red_goals' => null,
@@ -56,7 +56,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-06',
             ],
             [
-                'partita_ID' => '5',
+                'id' => '5',
                 'red_team_ID' => 'Team9',
                 'blue_team_ID' => 'Team10',
                 'red_goals' => null,
@@ -67,7 +67,7 @@ class PartitaTableSeeder extends Seeder
             ],
             // --------------- DAY2
             [
-                'partita_ID' => '6',
+                'id' => '6',
                 'red_team_ID' => 'Team9',
                 'blue_team_ID' => 'Team2',
                 'red_goals' => null,
@@ -77,7 +77,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-07',
             ],
             [
-                'partita_ID' => '7',
+                'id' => '7',
                 'red_team_ID' => 'Team1',
                 'blue_team_ID' => 'Team4',
                 'red_goals' => null,
@@ -87,7 +87,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-07',
             ],
             [
-                'partita_ID' => '8',
+                'id' => '8',
                 'red_team_ID' => 'Team3',
                 'blue_team_ID' => 'Team6',
                 'red_goals' => null,
@@ -97,7 +97,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-07',
             ],
             [
-                'partita_ID' => '9',
+                'id' => '9',
                 'red_team_ID' => 'Team5',
                 'blue_team_ID' => 'Team8',
                 'red_goals' => null,
@@ -107,7 +107,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-07',
             ],
             [
-                'partita_ID' => '10',
+                'id' => '10',
                 'red_team_ID' => 'Team7',
                 'blue_team_ID' => 'Team10',
                 'red_goals' => null,
@@ -118,7 +118,7 @@ class PartitaTableSeeder extends Seeder
             ],
             // --------------- DAY3
             [
-                'partita_ID' => '11',
+                'id' => '11',
                 'red_team_ID' => 'Team2',
                 'blue_team_ID' => 'Team3',
                 'red_goals' => null,
@@ -128,7 +128,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-08',
             ],
             [
-                'partita_ID' => '12',
+                'id' => '12',
                 'red_team_ID' => 'Team4',
                 'blue_team_ID' => 'Team5',
                 'red_goals' => null,
@@ -138,7 +138,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-08',
             ],
             [
-                'partita_ID' => '13',
+                'id' => '13',
                 'red_team_ID' => 'Team6',
                 'blue_team_ID' => 'Team7',
                 'red_goals' => null,
@@ -148,7 +148,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-08',
             ],
             [
-                'partita_ID' => '14',
+                'id' => '14',
                 'red_team_ID' => 'Team8',
                 'blue_team_ID' => 'Team9',
                 'red_goals' => null,
@@ -158,7 +158,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-08',
             ],
             [
-                'partita_ID' => '15',
+                'id' => '15',
                 'red_team_ID' => 'Team10',
                 'blue_team_ID' => 'Team1',
                 'red_goals' => null,
@@ -169,7 +169,7 @@ class PartitaTableSeeder extends Seeder
             ],
             // --------------- DAY3
             [
-                'partita_ID' => '16',
+                'id' => '16',
                 'red_team_ID' => 'Team?',
                 'blue_team_ID' => 'Team?',
                 'red_goals' => null,
@@ -179,7 +179,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-09',
             ],
             [
-                'partita_ID' => '17',
+                'id' => '17',
                 'red_team_ID' => 'Team?',
                 'blue_team_ID' => 'Team?',
                 'red_goals' => null,
@@ -189,7 +189,7 @@ class PartitaTableSeeder extends Seeder
                 'date' => '2022-03-09',
             ],
             [
-                'partita_ID' => '18',
+                'id' => '18',
                 'red_team_ID' => 'Team?',
                 'blue_team_ID' => 'Team?',
                 'red_goals' => null,
