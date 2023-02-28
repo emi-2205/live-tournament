@@ -6,17 +6,17 @@
         <form method="POST" action="{{ route('authentication') }}">
             @csrf
             <div>
-                <label for="username" style="color:white">Username:</label>
+                <label class="text-xl font-semibold text-gray-900 dark:text-white" for="username">Username:</label>
                 <input type="text" name="username" id="username">
             </div>
             <br>
             <div>
-                <label for="password" style="color:white">Password:</label>
+                <label class="text-xl font-semibold text-gray-900 dark:text-white" for="password">Password:</label>
                 <input type="password" name="password" id="password">
             </div>
             <br>
-            <div>
-                <button type="submit" style="color:white">Submit</button>
+            <div style="display: flex; justify-content: center">
+                <button class="text-xl font-semibold text-gray-900 dark:text-white" type="submit">Submit</button>
             </div>
         </form>
     </div>
